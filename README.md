@@ -1,5 +1,5 @@
 # SwingTrader
-Automated Swing Trading using Alpaca API. 
+Automated Swing Trading on Price Action using Alpaca API. 
 
 # Credentials
 Update 
