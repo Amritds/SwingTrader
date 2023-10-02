@@ -13,7 +13,9 @@ Stop the main process and run ```clear_state_files.sh``` to delete the bot's sta
 ### Strategy:
  <img src="./fpt.png">
 
-**swing_trader.py** implements a the trading strategy visualiszed in the image above. The top-10-day-gainer stock-list is pulled from yahoo-finance continuously after ```SWING_TRADER_START_TIME``` has elapsed on a trading day. If a top-gainer stock in the list has a history of a loosing streak (i.e the stock price has swung upwards suddenly), then it is marked for tracking. Multiple stocks can be tracked simultaneously.
+**swing_trader.py** implements a the trading strategy visualiszed in the image above. The price-action premise is that if a deteriorating stock swings suddenly upwards and then falls, then there is a good chance that it will swing upwards again.
+
+The top-10-day-gainer stock-list is pulled from yahoo-finance continuously after ```SWING_TRADER_START_TIME``` has elapsed on a trading day. If a top-gainer stock in the list has a history of a loosing streak (i.e the stock price has swung upwards suddenly), then it is marked for tracking. Multiple stocks can be tracked simultaneously.
 
 The highest-price-point (flash-point) is recorded and kept updated for all stocks being tracked. If any particular stock being tracked falls by some ```PERCENT_DROP``` below its highest point then it is marked for purchase. If that stock marked for purchase shows signs of rising above a predefined ``BUY_RISE`` percentage, then the purchase is confirmed and the maximum qty of the stock that can be afforded under the current buying-power is bought.
 
