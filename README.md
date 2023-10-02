@@ -6,7 +6,7 @@ Update
 ```API_KEY``` and ```API_SECRET``` in **swing_trader.py** with Alpaca credentials to link an account.
 
 ### Usage:
-Run ```python main.py```
+Run ```python main.py```. This main process will launch and monitor the main swing-trader bot and restart it if it goes down.
 
 ### Strategy:
  <img src="./fpt.png">
