@@ -9,7 +9,7 @@ Update
 Run ```python main.py```
 
 ### Strategy:
-
+ <img src="./fpt.png">
 
 ### Outputs
 
