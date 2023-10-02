@@ -8,6 +8,8 @@ Update
 ### Usage:
 Run ```python main.py```. This main process will launch and monitor the main swing-trader bot and restart it if it goes down.
 
+Stop the main process and run ```clear_state_files.sh``` to delete the bot's state. This clears information on all stocks bought or tracked so far.
+
 ### Strategy:
  <img src="./fpt.png">
 
@@ -29,8 +31,7 @@ and
 ```SWING_TRADER_START_TIME```
 can be set at the head of the **swing_trader.py** file.
 
-
-
+Rudimentary safe-guards try to ensure that a no more than 3-day trades are executed in a 5 day period to avoid frequent-day-trader status. However, these checks are dependent on the state-of-holdings recorded by the trading bot, and may fail if those records are inaccurate.
 
 ### Outputs
-
+Activity of the trading-bot is continuously printed to stdout. It is recommended that this code be run in a separate terminal with tmux to monitor output messages. Current stock holdings, quantities owned, current stocks tracked and those marked for purchase and sale are periodically dumped to pickle files ```holdings.pkl, quantity.pkl, current_track.pkl, cool_track.pkl, hot_track.pkl``` 
